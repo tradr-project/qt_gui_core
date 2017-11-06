@@ -95,6 +95,8 @@ class Main(object):
                 help='start with this named perspective')
             common_group.add_argument('--perspective-file', dest='perspective_file', type=str, metavar='PERSPECTIVE_FILE',
                 help='start with a perspective loaded from a file')
+            common_group.add_argument('--window-title', dest='window_title', type=str, metavar='WINDOW_TITLE',
+                help='change the window title')
         common_group.add_argument('--reload-import', dest='reload_import', default=False, action='store_true',
             help='reload every imported module')
         if not standalone:
@@ -551,6 +553,10 @@ class Main(object):
                         pass
                     else:
                         app.setWindowIcon(icon)
+
+        if main_window is not None:
+            if self._options.window_title:
+                main_window.setWindowTitle(self._options.window_title)
 
         if main_window is not None:
             main_window.show()
