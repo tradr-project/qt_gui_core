@@ -64,6 +64,7 @@ class DockWidgetTitleBar(QWidget):
         if not icon.isNull():
             self.help_button.setIcon(icon)
             self.help_button.setText("")
+        self.help_button.hide()
 
         icon = QIcon.fromTheme('window-close')
         if not icon.isNull():
