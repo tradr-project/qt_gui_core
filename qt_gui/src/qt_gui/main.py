@@ -426,6 +426,7 @@ class Main(object):
             print('\n'.join(sorted(plugin_manager.get_plugins().values())))
             return 0
 
+        # here the help action is specified
         help_provider = HelpProvider()
         plugin_manager.plugin_help_signal.connect(help_provider.plugin_help_request)
 
